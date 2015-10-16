@@ -264,7 +264,6 @@ Class.pt.creat = function(){
     //建立容器
     that.vessel(conType, function(html, titleHTML){
         $('body').append(html[0]);
-         $('body').append(html[0]);
         conType ? function(){
             (config.type == 2 || config.type == 4) ? function(){
                 $('body').append(html[1]);
