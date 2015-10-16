@@ -264,13 +264,17 @@ Class.pt.creat = function(){
     //建立容器
     that.vessel(conType, function(html, titleHTML){
         $('body').append(html[0]);
+         $('body').append(html[0]);
         conType ? function(){
             (config.type == 2 || config.type == 4) ? function(){
                 $('body').append(html[1]);
             }() : function(){
                 if(!content.parents('.'+doms[0])[0]){
-                    content.show().addClass('layui-layer-wrap').wrap(html[1]);
-                    $('#'+ doms[0] + times).find('.'+doms[5]).before(titleHTML);
+                	content.show().addClass('layui-layer-wrap');
+                	var hl = $(html[1]);
+                    hl.find('.'+doms[5]).append(content);
+                    hl.find('.'+doms[5]).before(titleHTML);
+                    $('body').append(hl);
                 }
             }();
         }() : $('body').append(html[1]);
